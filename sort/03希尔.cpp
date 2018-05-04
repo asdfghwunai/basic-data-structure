@@ -3,6 +3,7 @@
 #include<string>
 using namespace std;
 
+//突破了O(n2)
 
 void insection_sort(int array[],int n)
 {
