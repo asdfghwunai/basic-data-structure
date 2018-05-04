@@ -7,7 +7,7 @@ void bubble_sort(int array[],int n)
 {
 	for (int i = 0; i <= n - 2; i++)   //比较到倒数第二个数即可
 	{
-		for (int j = n - 1; j >= i + 1; j--)
+		for (int j = n - 1; j >= i + 1; j--)  //记着从末尾到头的顺序
 		{
 			if (array[j] > array[j - 1])
 				swap(array[j],array[j-1]);
