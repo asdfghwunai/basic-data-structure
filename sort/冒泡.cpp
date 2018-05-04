@@ -1,3 +1,8 @@
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+
 void bubble_sort(int array[],int n)
 {
 	for (int i = 0; i <= n - 2; i++)   //比较到倒数第二个数即可
