@@ -18,7 +18,7 @@ void Build_List(ListNode **head)
 {
 	int data;
 	int i = 0;
-	ListNode *p = *head;   //不能用p替代head进行操作,p和*head都是0，但是p的内存地址不是*head的内存地址
+	ListNode *p = *head;   //不能用p替代head进行操作,p和*head都是0，只是p暂时指向了head的指向,但是p的内存地址不是*head的内存地址
 	
 	printf("%p %p",*head,p);
 	while (1)
@@ -55,6 +55,34 @@ void bianli(ListNode *p)
 		}
 		cout << endl<<"遍历结束！";
 	}
+}
+
+void reverse(ListNode *p)   //照leetcode上的方法
+{
+	if (p == NULL)
+	{
+		cout << "链表为空无法反转" << endl;
+		return;  //得return一下，不然ListNode *cur = pre->next;会出异常
+	}	
+
+		
+	ListNode *dummy = new ListNode(-1);
+	dummy->next = p;
+
+	ListNode *pre = dummy->next;
+	ListNode *cur = pre->next;
+
+	while (cur)
+	{
+		pre->next = cur->next;  //pre保持不变
+		cur->next = dummy->next;  //后一个与前一个连起来
+		dummy->next = cur;
+
+		cur = pre->next;
+	}
+
+	cout << "反转后遍历:\n";
+	bianli(dummy->next);
 }
 
 void main()
