@@ -92,6 +92,7 @@ void main()
 	Build_List(&head);
 
 	bianli(head);
+	reverse(head);
 
 	while (1);
 
