@@ -85,6 +85,27 @@ void reverse(ListNode *p)   //照leetcode上的方法
 	bianli(dummy->next);
 }
 
+int Return_mid(ListNode *head)
+{
+	ListNode *cur = head;
+	ListNode *mid = head;
+	int i = 0;
+	int j = 0;
+
+	while (cur)
+	{
+		if (i / 2 > j)  //0,1,2时当i为2时 j由0变1
+		{
+			j++;
+			mid = mid->next;
+		}
+	
+		i++;
+		cur = cur->next;
+	}
+	return mid->val;
+}
+
 void main()
 {
 	ListNode *head=NULL;  //得需要一个头结点
