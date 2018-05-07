@@ -19,7 +19,7 @@ int Partition(int a[],int low,int high)
 	return low;
 }
 
-void Quick_sort(int a[],int low,int high)  //这个才是递归的
+void Quick_sort(int a[],int low,int high)  //这个才是递归的，递归一定要有返回的就是肯定需要if语句
 {
 	if (low < high)  //low<high才能分段
 	{
