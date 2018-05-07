@@ -6,7 +6,7 @@ using namespace std;
 
 /*
 方法:
-先自顶向下分割成越来越小的块，当到达最小的块时开始返回
+先自顶向下分割成越来越小的块，当到达最小的块时开始返回，然后自底向上融合
 */
 void merge(int a[],int m,int b[],int n,int c[])
 {
