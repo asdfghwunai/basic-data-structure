@@ -4,6 +4,10 @@
 #include<algorithm>
 using namespace std;
 
+/*
+方法:
+先自顶向下分割成越来越小的块，当到达最小的块时开始返回
+*/
 void merge(int a[],int m,int b[],int n,int c[])
 {
 	int k = 0;
