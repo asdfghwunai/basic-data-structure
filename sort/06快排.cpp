@@ -23,7 +23,7 @@ void Quick_sort(int a[],int low,int high)  //这个才是递归的，递归一�
 {
 	if (low < high)  //low<high才能分段
 	{
-		int budong = Partition(a, low, high);
+		int budong = Partition(a, low, high);  //递归就是二叉树的前序遍历
 		Quick_sort(a, low, budong - 1);
 		Quick_sort(a, budong + 1, high);
 	}
