@@ -4,7 +4,7 @@
 #include<algorithm>
 using namespace std;
 
-
+//方法就是迭代一下即可----首先构建一个大顶堆，然后替换---调整---替换----调整
 void Heap_adjust(int a[],int first,int last)
 {
 	int temp = a[first];
