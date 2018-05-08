@@ -21,12 +21,13 @@ int Partition(int a[],int low,int high)
 
 void Quick_sort(int a[],int low,int high)  //这个才是递归的，递归一定要有返回的就是肯定需要if语句
 {
-	if (low < high)  //low<high才能分段
+	if (low < high)  //low<high才能分段  此if是进入下层递归
 	{
 		int budong = Partition(a, low, high);  //递归就是二叉树的前序遍历
 		Quick_sort(a, low, budong - 1);
 		Quick_sort(a, budong + 1, high);
-	}
+	}   
+	//终止条件是隐含的,就是不满足条件
 	
 }
 
