@@ -41,6 +41,37 @@ void Build_List(ListNode **head)
 	}
 }
 
+void Build_Circle_List(ListNode **head)
+{
+	int data;
+	int i = 0;
+	ListNode *p = *head;   //不能用p替代head进行操作,p和*head都是0，但是p的内存地址不是*head的内存地址
+	
+	printf("%p %p",*head,p);
+	while (1)
+	{
+		i++;
+		cin >> data;
+		if (data == 0)  //输入是0跳出
+		{
+			p->next = *head;   //和上面的区别在这里。就是最后一个节点不指向NULL了
+			break;
+		}
+			
+		if (i == 1)
+		{
+			*head = new ListNode(data);  //重定向*head的指向
+			p = *head;
+		}
+		else
+		{
+			ListNode *q = new ListNode(data);
+			p->next = q;
+			p = q;
+		}	
+	}
+}
+
 void bianli(ListNode *p)
 {
 	if (p == NULL)
