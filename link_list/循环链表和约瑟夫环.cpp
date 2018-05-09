@@ -31,7 +31,7 @@ void Build_Circle_List(ListNode **head)
 	}
 }
 
-
+//方法 ---数到m-1位然后保存m位结果，删除m位结果
 void yuesefu(ListNode *head,int m)
 {
 	ListNode *p = head;
