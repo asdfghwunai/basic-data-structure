@@ -60,7 +60,7 @@ void bianli(ListNode *head)
 {
 	if (head == NULL)
 	{
-		cout << "双向链表为空无法遍历" << endl;
+		cout << "队列为空无法遍历" << endl;
 		return;
 	}
 	cout <<"遍历结果\n" ;
