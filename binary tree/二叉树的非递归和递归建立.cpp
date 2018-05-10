@@ -112,11 +112,33 @@ TreeNode * Create_Tree(int data[],int len)
 	return root;
 }
 
+void Search_tree(TreeNode *root,int data)
+{
+	if (root == NULL)           //终止条件1
+	{
+		cout << "没有找到" << endl;
+		return;
+	}
+	if (data == root->data)      //终止条件2
+		cout << "找到了节点，地址为"<<root << endl;
+	else if (data < root->data)
+	{
+		Search_tree(root->left, data);
+	}
+		
+	else
+		Search_tree(root->right,data);
+	
+}
+
 void main()
 {
 
 	int data[] = {1,2,2,3};
 	TreeNode *root=Create_Tree(data,4);
+	
+	Search_tree(root,3);
+	Search_tree(root,4);
 
 	while (1);
 }
