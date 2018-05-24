@@ -54,3 +54,49 @@ public:
     }
 };
 
+
+/**
+ * Definition for binary tree
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+
+/*----后序方法
+先把左边都压栈，这时不能访问，弹栈后再访问，然后指向右边，下次就从右边开始了
+*/
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode *root) {
+        vector<int> result;
+        stack<TreeNode *> s;
+        TreeNode *pre=NULL;
+        if(root==NULL)
+            return result;
+        s.push(root);
+        while(!s.empty())
+        {
+            root=s.top();
+            if((root->left&&root->right)||((pre!=NULL)&&(pre==root->left||pre==root->right)))  //情况1直接输出
+            {
+                    result.push_back(root->val);
+                    s.pop();
+                    pre=root;
+                    //root=NULL; //来让下一个结点出栈 这里改root没事，当成副本和实体指向同一个地址，现在副本不指向了,实体还指向
+            }
+            else
+            {
+                if(root->right)
+                    s.push(root->right);
+                if(root->left)
+                    s.push(root->left);   //迷在root怎么向下走
+            }
+       
+        }
+        return result;
+    }
+};
+
