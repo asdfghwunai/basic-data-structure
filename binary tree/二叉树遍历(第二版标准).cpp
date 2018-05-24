@@ -24,3 +24,33 @@ public:
         return result;
     }
 };
+
+
+/*----中序方法
+先把左边都压栈，这时不能访问，弹栈后再访问，然后指向右边，下次就从右边开始了
+*/
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode *root) {
+        vector<int> result;
+        stack<TreeNode *>s;
+        
+        while(root||!s.empty())
+        {
+            if(root)
+            {
+                s.push(root);
+                root=root->left;
+            }
+            else
+            {
+                root=s.top();
+                s.pop();
+                result.push_back(root->val);
+                root=root->right;   //访问完左边直接访问右边，注意中间是先访问过
+            }
+        }
+        return result;
+    }
+};
+
