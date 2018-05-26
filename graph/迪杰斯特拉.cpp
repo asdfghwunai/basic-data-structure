@@ -4,9 +4,9 @@
 using namespace std;
 #define  N 4
 #define  INF 10000
-int maze[N][N]={{0,1,1,0},
-                {1,0,1,1},
-                {1,1,0,1},
+int maze[N][N]={{0,2,1,0},
+                {2,0,2,1},
+                {1,2,0,1},
                 {0,1,1,0}};
 int visited[N]={0};   //访问标志
 int dis[N]={0};       //存放起点到此节点的最短距离
@@ -27,7 +27,7 @@ void dij(int start)
 
 
     visited[start]=1;  //访问起点
-    dis[start]=0;  //到自己的距离为0，不管0还是INF无所谓的，后面都不判断起点
+    //dis[start]=0;  //到自己的距离为0，不管0还是INF无所谓的，后面都不判断起点
 
 
 
@@ -73,7 +73,18 @@ void dij(int start)
 int main()
 {
 
-
+    dij(1);
+    for(int i=0;i<N;i++) {
+        cout << i << "结点的路径反序：";
+        cout << i << " ";
+        int j = i;
+        while (pre[j] != -1)
+        {
+            cout<<pre[j]<<" ";
+            j=pre[j];
+        }
+        cout<<endl;
+    }
 
 
     return 0;
