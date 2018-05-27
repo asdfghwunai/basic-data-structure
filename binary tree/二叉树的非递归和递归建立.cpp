@@ -133,7 +133,7 @@ TreeNode * Search_tree(TreeNode *root,int data)
 	
 }
 
-void Delete_tree(TreeNode *root)
+void Delete_tree(TreeNode *root)  //看来想删除得有父节点辅助啊
 {
 	if (root->left != NULL)   //刚开始先转移，就是先删别人
 		Delete_tree(root->left);
