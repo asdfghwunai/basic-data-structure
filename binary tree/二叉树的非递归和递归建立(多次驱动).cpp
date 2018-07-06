@@ -110,7 +110,7 @@ TreeNode * Create_Tree(int data[],int len)
 	return root;
 }
 
-TreeNode * Search_tree(TreeNode *root,int data)
+TreeNode * Search_tree(TreeNode *root,int data)   //变形的前序
 {
 	if (root == NULL)           //终止条件1
 	{
