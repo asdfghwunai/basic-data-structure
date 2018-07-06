@@ -80,7 +80,7 @@ public:
         while(!s.empty())
         {
             root=s.top();
-            if((root->left&&root->right)||((pre!=NULL)&&(pre==root->left||pre==root->right)))  //情况1直接输出
+            if((root->left==NULL&&root->right==NULL)||((pre!=NULL)&&(pre==root->left||pre==root->right)))  //情况1直接输出
             {
                     result.push_back(root->val);
                     s.pop();
