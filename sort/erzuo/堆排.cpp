@@ -3,7 +3,9 @@
 #include <math.h>
 using namespace std;
 
-
+/*
+建堆（从下到上，从右到左）-----首尾交换，调整剩余的（循环）
+*/
 
 void heap_adjust(int a[], int first, int last)
 {
