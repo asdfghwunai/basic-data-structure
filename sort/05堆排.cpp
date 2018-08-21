@@ -8,7 +8,7 @@ using namespace std;
 void Heap_adjust(int a[],int first,int last)
 {
 	int temp = a[first];
-	for (int j = 2 * first; j <= last; j++)
+	for (int j = 2 * first + 1; j <= last; j++)
 	{
 		if (j<last&&a[j + 1]>a[j])   //j<last是为了有j+1
 			j++;      //找到孩子中最大的
