@@ -27,6 +27,7 @@ else
 初始化数组为 dp[N+1]
 不知为啥，双重for循环就从尾到头，见https://blog.csdn.net/u014490454/article/details/77990195
 这个看成一个for循环，http://www.cnblogs.com/tgycoder/p/5034131.html
+但好像正着来反着来都行，见https://blog.csdn.net/qq_34369618/article/details/72852740
 
 ------最长递增子序列长度/最长递增子串-------连不连续都行，感觉乱叫
 1.转移方程为
