@@ -4,4 +4,5 @@
 
 二分就是你确定能减半再用，比如让你有序数组找重复的那个，你肯定只能从头遍历，不然怎么能知道减半时往哪边找目标呢？没法做了
 
-二分查找出循环时left>=right啊
+1.while(left<=right) 出循环时left>right啊
+2.if决定了出循环时left和right的状态，mid是循环里有用，left和right是循环外有用
