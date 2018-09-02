@@ -58,3 +58,41 @@ int BinarySearch(int array[], int n, int value)
     }
     return array[left - 1] == value ? left - 1 : -1;   //left是超right的，left的值肯定大于value
 }
+
+//--------------------
+4.给定一个有序的数组，查找最接近value且大于value的数的下标（如果该数存在多个，返回第一个下标），不存在返回-1。
+
+int BinarySearch(int array[], int n, int value)
+{
+    int left = 0;
+    int right = n - 1;
+
+    while (left <= right)  
+    {
+        int middle = left + ((right - left) >> 1);
+        if (array[middle] > value)   //此处让right出来时小于等于value
+            right = middle - 1;
+        else
+            left = middle + 1;
+    }
+    return array[right + 1] > value ? right + 1 : -1;    //出来时right是比left小的，并且right位置的数必小于value
+}
+
+//--------------------------------------
+5.查找最接近value且小于value的数的下标（如果该数存在多个，返回最后一个下标）呢？
+
+int BinarySearch(int array[], int n, int value)
+{
+    int left = 0;
+    int right = n - 1;
+
+    while (left <= right)  
+    {
+        int middle = left + ((right - left) >> 1);
+        if (array[middle] >= value)                 
+            right = middle - 1;
+        else                            //出来循环时left肯定大于等于value
+            left = middle + 1;
+    }
+    return array[left-1] < value ? left - 1 : -1;
+}
