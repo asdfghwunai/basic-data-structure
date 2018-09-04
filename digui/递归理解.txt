@@ -25,7 +25,8 @@ int sum(int a[],int n)
 		return a[0];       //此return是最后一层返回给上一层的
 	return sum(a, n - 1) + a[n];   //此return是一般返回
 }
-千万要牢记开头那个return是到底后的return，其他都是不到底的return。 return都是向上一层的，可不是直接出结果了，这是非常大的误区
+千万要牢记开头那个return是到底后的return，其他都是不到底的return。 return都是向上一层的，可不是直接出结果了，这是非常大的误区；
+刚进去那个一return才是结果，比如二叉树的结点计数就是先进到最底层，然后开始往上return，最后到起点，起点再一return就好了
        
 通过回溯对递归理解又精进一点:
 回溯就是有条件前序遍历，回溯的递归起点有很多个，这些起点没联系，所以才要for循环驱动；
